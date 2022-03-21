@@ -1,0 +1,4 @@
+/* if use click and go w/o input */
+input.ng-touched.ng-invalid{
+  border: 1px solid red;
+}

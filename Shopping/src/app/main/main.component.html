@@ -1,0 +1,19 @@
+<div class = "row">
+  <div class = "col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" *ngFor = "let product of main">
+    <div class = "card">
+      <img [src] = "product.productImageUrl[0]" alt="">
+       <a [routerLink]= "['/main', product.id]">
+         <h2 class = "card-title">
+        {{ product.productName }}
+        </h2>
+      </a>
+      <div>
+        <button class = "btn btn-outline-secondary">Buy Now</button>
+        <button class = "btn btn-outline-info" style = "float: right">Add to Cart</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- col-xs-2.col-sm-3.col-md-6. -->

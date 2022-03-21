@@ -1,0 +1,36 @@
+<!-- login form info shown to user -->
+<header>Login Form</header>
+
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+  <input
+  type = "text"
+  [formControlName]="'email'"
+  placeHolder="E-mail"
+  >
+  <!-- email input requirements -->
+  <span
+  *ngIf="!loginForm.get('email').valid
+  &&
+  loginForm.get('email').touched"
+  >Please enter your e-mail as required...</span>
+  <br>
+  <input
+  type = "password"
+  [formControlName]="'password'"
+  placeHolder="Password"
+  >
+  <!-- password input requirements -->
+  <span
+  *ngIf="!loginForm.get('password').valid
+  &&
+  loginForm.get('password').touched"
+  >Please enter your password as required...</span>
+
+  <span
+  *ngIf = "errorMessage"> {{errorMessage}} </span>
+  <br>
+
+  <input type="submit" value="Login">
+
+</form>
+

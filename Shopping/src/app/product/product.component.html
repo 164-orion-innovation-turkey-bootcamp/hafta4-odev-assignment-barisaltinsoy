@@ -1,0 +1,30 @@
+<div class = "row">
+
+</div>
+<!-- focused and enlarged image -->
+<div class = "col-sm-12 col-md-5">
+  <img [src] = "product.productImageUrl[activeImage]" alt="" style = "width: 100%">
+</div>
+
+  <!-- responseive design required -->
+  <div class = "col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+    <!-- image | related with index -->
+    <div class = "images" *ngFor = "let image of product.productImageUrl; let i = index">
+      <img [src] = "image" alt="" (mouseenter) = "activeImage = i">
+    </div>
+
+  <!-- product details -->
+  <div class = "col-sm-12 offset-md-1 col-md-4">
+    <h2> {{ product.productName }} </h2>
+    <h6> {{ product.productDetail }} </h6>
+    <h3> {{ product.productPrice }} $ </h3>
+
+    <!-- 2 seperated button for direct purchase and add to cart -->
+    <button class = "btn btn-outline-secondary">Buy Now</button>
+    <button class = "btn btn-outline-info"
+    style = "float: right"
+    (click) = "addToCart(product)">Add to Cart</button>
+
+  </div>
+
+</div>

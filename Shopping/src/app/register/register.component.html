@@ -1,0 +1,62 @@
+<!-- register form info shown to user -->
+<header>Register Form</header>
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+
+  <label for="name_surname">Name & Surname</label>
+    <div>
+      <input
+        [formControlName] = "'name_surname'"
+        type = "text"
+        placeHolder = "Name & Surname"
+        id = "name_surname"
+      />
+    </div>
+
+  <label for="email">E-Mail</label>
+  <div>
+    <input
+      [formControlName] = "'email'"
+      type = "text"
+      placeHolder = "E-mail Adress"
+    />
+  </div>
+
+  <span
+  *ngIf = "!loginForm.get('email').valid
+  &&
+  loginForm.get('email').touched"
+  >Please, check your e-mail adress...</span>
+
+  <label for="password">Password</label>
+  <div>
+    <input
+      [formControlName] = "'password'"
+      type = "text"
+      placeHolder = "Password please"
+      />
+  </div>
+
+  <span
+  *ngIf = "!loginForm.get('password').valid
+  &&
+  loginForm.get('password').touched"
+  >Please, check your password...</span>
+
+  <span class = "text-danger"
+  *ngIf = "!loginForm.get('password').valid
+  &&
+  loginForm.get('password').touched
+  ">Password requieres special characters:
+  <br>
+  1 lowercase letter
+  <br>
+  1 uppercase letter
+  <br>
+  1 number
+  </span>
+  <br>
+
+
+  <button type="submit" value="Register">Register</button>
+
+</form>
